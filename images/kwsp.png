@@ -33,9 +33,9 @@ details[open] { background: #970302; color: #dfdedd; }
 <div class="content-text">
 <h1>Error</h1>
 
-<p>Not Found</p>
+<p>Use thumbnail steps listed on https://w.wiki/GHai. Please contact noc@wikimedia.org for further information (a765913)</p>
 </div>
 </div>
-<div class="footer"><p>If you report this error to the Wikimedia System Administrators, please include the details below.</p><p class="text-muted"><code>Request served via cp5029 cp5029, Varnish XID 38962473<br>Upstream caches: cp5029 int<br>Error: 404, Not Found at Mon, 16 Feb 2026 12:04:05 GMT<br><details><summary>Sensitive client information</summary>IP address: 2402:1980:c2a6:4b76:adae:fb40:1e00:13e6</details></code></p>
+<div class="footer"><p>If you report this error to the Wikimedia System Administrators, please include the details below.</p><p class="text-muted"><code>Request served via cp5029 cp5029, Varnish XID 50825362<br>Upstream caches: cp5029 int<br>Error: 429, Use thumbnail steps listed on https://w.wiki/GHai. Please contact noc@wikimedia.org for further information (a765913) at Mon, 16 Feb 2026 12:26:59 GMT<br><details><summary>Sensitive client information</summary>IP address: 2402:1980:c2a6:4b76:adae:fb40:1e00:13e6</details></code></p>
 </div>
 </html>

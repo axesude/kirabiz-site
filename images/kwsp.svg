@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
-  <rect width="300" height="100" fill="#fff"/>
-  <circle cx="50" cy="50" r="40" fill="#cc0000"/>
-  <text x="105" y="65" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#000">KWSP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <!-- Red Circle -->
+  <circle cx="60" cy="60" r="45" fill="#E21F26"/>
+  <!-- White Inner Shape (Approximate) -->
+  <path d="M60 30 L75 60 L60 90 L45 60 Z" fill="#fff"/>
+  <!-- KWSP Text -->
+  <text x="120" y="75" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#1A3668">KWSP</text>
+  <!-- EPF Subtext -->
+  <text x="122" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1A3668" letter-spacing="2">EPF</text>
 </svg>
