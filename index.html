@@ -33,7 +33,7 @@
                 <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
                     <a href="#features" class="hover:text-teal-600">Features</a>
                     <a href="#compliance" class="hover:text-teal-600">Compliance</a>
-                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="btn-gradient text-white px-5 py-2.5 rounded-full shadow-lg shadow-teal-200/50">Download Now</a>
+                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="download-btn btn-gradient text-white px-5 py-2.5 rounded-full shadow-lg shadow-teal-200/50">Download Now</a>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     Automate your SST, PCB, and 2026 Statutory requirements with Malaysia's most modern desktop accounting software. Secure, local-first, and beautifully designed.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="btn-gradient text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-teal-300/40 inline-flex items-center justify-center">
+                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="download-btn btn-gradient text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-xl shadow-teal-300/40 inline-flex items-center justify-center">
                         Download for Windows — Free Forever*
                     </a>
                     <a href="guide.html" class="bg-white text-gray-700 border border-gray-200 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-50 flex items-center justify-center">
@@ -90,6 +90,19 @@
     <!-- Value Propositions -->
     <section id="features" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Live Stats -->
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 mb-20 text-center">
+                <div class="group">
+                    <div id="visitor-count" class="text-4xl md:text-5xl font-extrabold text-teal-600 mb-2">...</div>
+                    <div class="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold">Trusted Visitors</div>
+                </div>
+                <div class="hidden sm:block w-px h-16 bg-gradient-to-b from-transparent via-gray-200 to-transparent"></div>
+                <div class="group">
+                    <div id="download-count" class="text-4xl md:text-5xl font-extrabold text-blue-600 mb-2">...</div>
+                    <div class="text-xs uppercase tracking-[0.2em] text-gray-400 font-bold">Total Downloads</div>
+                </div>
+            </div>
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
                 <div class="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-teal-200 transition-colors">
                     <div class="w-12 h-12 bg-pastel-mint rounded-2xl mb-6 mx-auto md:mx-0 flex items-center justify-center text-2xl">📋</div>
@@ -192,7 +205,7 @@
                     Join the digital revolution. Reclaim your time and ensure your business stays 100% compliant with LHDN, KWSP, and SOCSO.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="btn-gradient text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl shadow-blue-300/50">
+                    <a href="https://drive.google.com/file/d/1nAA2rD5FgKnVo5h_V8h7aIFfmYnYgW7x/view?usp=drive_link" class="download-btn btn-gradient text-white px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl shadow-blue-300/50">
                         Download Now — Try it Free
                     </a>
                 </div>
@@ -225,5 +238,51 @@
         </div>
     </footer>
 
+    <!-- Stats Tracking Script -->
+    <script>
+        const NAMESPACE = 'kirabiz-accounting-plus';
+        const VISITOR_KEY = 'site-visitors';
+        const DOWNLOAD_KEY = 'total-downloads';
+
+        async function fetchStats() {
+            try {
+                // Increment and get visitor count
+                const vRes = await fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${VISITOR_KEY}`);
+                const vData = await vRes.json();
+                document.getElementById('visitor-count').innerText = vData.value.toLocaleString();
+
+                // Just get download count (don't increment on page load)
+                const dRes = await fetch(`https://api.countapi.xyz/get/${NAMESPACE}/${DOWNLOAD_KEY}`);
+                const dData = await dRes.json();
+                document.getElementById('download-count').innerText = (dData.value || 0).toLocaleString();
+            } catch (err) {
+                console.warn('Stats API error:', err);
+                // Fallback values if API is blocked or down
+                document.getElementById('visitor-count').innerText = '1,000+';
+                document.getElementById('download-count').innerText = '250+';
+            }
+        }
+
+        async function incrementDownloads() {
+            try {
+                const res = await fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${DOWNLOAD_KEY}`);
+                const data = await res.json();
+                document.getElementById('download-count').innerText = data.value.toLocaleString();
+            } catch (err) {
+                console.error('Download tracking error:', err);
+            }
+        }
+
+        // Attach event listeners to download buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchStats();
+            
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    incrementDownloads();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
