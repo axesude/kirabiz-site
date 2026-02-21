@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiraBiz Welcome Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; color: #1f2937; line-height: 1.5; }
+        .page { background: white; max-width: 800px; margin: 2rem auto; padding: 3rem; border-radius: 1.5rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); border-top: 8px solid #0d9488; }
+        .step-number { width: 36px; height: 36px; background-color: #0d9488; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
+        .bilingual-header { color: #0d9488; font-weight: 800; border-bottom: 2px solid #f3f4f6; padding-bottom: 0.5rem; margin-bottom: 1rem; display: flex; align-items: baseline; gap: 0.5rem; }
+        .bilingual-header span { font-size: 0.8rem; color: #6b7280; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        .support-card { background: linear-gradient(135deg, #0d9488 0%, #0891b2 100%); color: white; border-radius: 1rem; padding: 1.5rem; margin-top: 2rem; }
+        @media print {
+            body { background: white; margin: 0; }
+            .page { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">KiraBiz <span class="text-teal-600">Accounting Plus</span></h1>
+                <p class="text-gray-500 font-medium">Welcome & Quick Start Guide | Panduan Mula Pantas</p>
+            </div>
+            <div class="mt-4 md:mt-0 text-right text-xs text-gray-400">
+                <p>Version 2026.1</p>
+                <p>SST, EPF, SOCSO & LHDN Ready</p>
+            </div>
+        </div>
+
+        <!-- Section 1: Installation -->
+        <div class="mb-10">
+            <h2 class="bilingual-header">1. Installation <span>• Pemasangan</span></h2>
+            <div class="flex gap-4 items-start">
+                <div class="step-number">1</div>
+                <div>
+                    <p class="font-bold">Download & Run / Muat Turun & Jalankan</p>
+                    <p class="text-gray-600 text-sm mb-2">Double-click the <strong>KiraBiz_Setup.exe</strong>. If Windows SmartScreen appears, click "More Info" → "Run Anyway".</p>
+                    <p class="text-gray-500 text-xs italic">Klik dua-kali pada fail installer. Jika amaran Windows muncul, klik "More Info" → "Run Anyway".</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Launch -->
+        <div class="mb-10">
+            <h2 class="bilingual-header">2. Launch <span>• Pelancaran</span></h2>
+            <div class="flex gap-4 items-start">
+                <div class="step-number">2</div>
+                <div>
+                    <p class="font-bold">Open KiraBiz / Buka KiraBiz</p>
+                    <p class="text-gray-600 text-sm mb-2">Use the Desktop shortcut. A command window will briefly appear; **do not close it**. Your default browser will launch the KiraBiz interface.</p>
+                    <p class="text-gray-500 text-xs italic">Gunakan shortcut di Desktop. Tetingkap hitam akan muncul sekejap; **jangan tutup**. Pelayar internet anda akan memaparkan KiraBiz.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Activation -->
+        <div class="mb-10">
+            <h2 class="bilingual-header">3. Activation <span>• Pengaktifan</span></h2>
+            <div class="flex gap-4 items-start">
+                <div class="step-number">3</div>
+                <div>
+                    <p class="font-bold text-red-600">Enter Your License Key / Masukkan Kunci Lesen</p>
+                    <p class="text-gray-600 text-sm mb-2">Navigate to <strong>Settings → Licensing</strong>. Enter your Postcode and click "Request via WhatsApp" to send your Machine ID to our support team.</p>
+                    <p class="text-gray-500 text-xs italic">Pergi ke Settings → Licensing. Masukkan Poskod dan klik "Request via WhatsApp" untuk menghantar ID Mesin unik kepada kami.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Tips Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-10">
+            <div class="p-4 bg-teal-50 rounded-xl border border-teal-100">
+                <p class="text-teal-800 font-bold text-xs uppercase mb-2 tracking-wider">💡 Pro-Tip</p>
+                <p class="text-teal-700 text-xs font-medium">Use the "ABC Enterprise" sample company to practice before creating your own business file.</p>
+            </div>
+            <div class="p-4 bg-blue-50 rounded-xl border border-blue-100">
+                <p class="text-blue-800 font-bold text-xs uppercase mb-2 tracking-wider">🔒 Privacy</p>
+                <p class="text-blue-700 text-xs font-medium">KiraBiz is local-first. Your data is stored on your PC in the <strong>LocalAppData/KiraBiz</strong> folder.</p>
+            </div>
+        </div>
+
+        <!-- Support Card -->
+        <div class="support-card shadow-lg">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-1">Need Help? / Perlu Bantuan?</h3>
+                    <p class="text-teal-50 text-sm">Contact our official support lines for training or setup help.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="https://wa.me/60178295006" class="px-6 py-2.5 bg-white text-teal-700 font-bold rounded-lg text-sm text-center shadow-md hover:bg-teal-50">WhatsApp Support</a>
+                    <a href="mailto:axesude@gmail.com" class="px-6 py-2.5 bg-teal-800 text-white font-bold rounded-lg text-sm text-center shadow-md hover:bg-teal-900 border border-teal-700">Email Support</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-12 pt-8 border-t border-gray-100 text-center text-[10px] text-gray-400 font-medium uppercase tracking-[0.2em]">
+            &copy; 2026 KiraBiz Systems Malaysia. Professional SME Accounting Solutions.
+        </div>
+    </div>
+
+    <!-- Print Button for User -->
+    <div class="max-w-[800px] mx-auto text-center mb-10 no-print">
+        <button onclick="window.print()" class="px-8 py-3 bg-gray-900 text-white font-bold rounded-xl shadow-lg hover:bg-black transition-all">
+            🖨️ Print to PDF / Cetak ke PDF
+        </button>
+        <p class="mt-4 text-xs text-gray-500">Attach this PDF to your customer's license key email or WhatsApp message.</p>
+    </div>
+
+</body>
+</html>
